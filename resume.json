@@ -1,0 +1,37 @@
+{
+  "basics": {
+    "name": "Kamil Tomšík",
+    "label": "JavaScript dev / consultant / lector",
+    "picture": "",
+    "email": "info@tomsik.cz",
+    "phone": "+420 733 101 969",
+    "website": "http://tomsik.cz",
+    "location": {
+      "city": "Brno",
+      "countryCode": "CZ",
+      "region": "Moravia"
+    },
+    "profiles": [
+      {
+        "network": "Twitter",
+        "username": "cztomsik",
+        "url": "https://twitter.com/cztomsik"
+      },
+      {
+        "network": "Github",
+        "username": "cztomsik",
+        "url": "https://github.com/cztomsik"
+      },
+      {
+        "network": "SoundCloud",
+        "username": "cztomsik",
+        "url": "https://soundcloud.com/cztomsik"
+      },
+      {
+        "network": "Searchlibs",
+        "username": "admin",
+        "url": "http://searchlibs.com"
+      }
+    ]
+  }
+}
