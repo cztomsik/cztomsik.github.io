@@ -1,8 +1,9 @@
 {
   "basics": {
     "name": "Kamil Tomšík",
-    "label": "JavaScript dev / consultant / lector",
-    "picture": "",
+    "label": "Senior full-stack developer",
+    "summary": "Hi, right now, I am probably working on some contract as a full-stack developer. I am not actively looking for any new opportunities, but you can of course try to reach me via email. I prefer to use JavaScript/TypeScript and I also have a solid experience with Java, Kotlin, Rust and PHP, in case you need it, but it's not something I'd like to do on a day-to-day basis.",
+    "picture": "https://avatars.githubusercontent.com/u/3526922?v=4",
     "email": "info@tomsik.cz",
     "phone": "+420 733 101 969",
     "website": "http://tomsik.cz",
@@ -13,24 +14,19 @@
     },
     "profiles": [
       {
-        "network": "Twitter",
-        "username": "cztomsik",
-        "url": "https://twitter.com/cztomsik"
-      },
-      {
         "network": "Github",
         "username": "cztomsik",
         "url": "https://github.com/cztomsik"
       },
       {
-        "network": "SoundCloud",
+        "network": "LinkedIn",
         "username": "cztomsik",
-        "url": "https://soundcloud.com/cztomsik"
+        "url": "https://linkedin.com/in/cztomsik"
       },
       {
-        "network": "Searchlibs",
-        "username": "admin",
-        "url": "http://searchlibs.com"
+        "network": "Twitter",
+        "username": "cztomsik",
+        "url": "https://twitter.com/cztomsik"
       }
     ]
   }
