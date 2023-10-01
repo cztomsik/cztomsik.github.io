@@ -1,0 +1,11 @@
+{{ define "title" }} {{ .Title }} &ndash; {{ .Site.Title }} {{ end }} {{ define
+"main" }}
+<div>
+  <h1>{{ .Title }}</h1>
+  {{ if .Date }}
+  <p class="m-0">{{ .Date.Format "2 Jan 2006" }}</p>
+  {{ end }}
+
+  <div class="content">{{ .Content }}</div>
+</div>
+{{ end }}

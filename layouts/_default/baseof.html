@@ -1,0 +1,54 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ block "title" . }} {{ .Site.Title }} {{ end }}</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <nav class="container flex py-1">
+      {{ $current := . }}
+      <ul class="flex gap-1">
+        {{ range .Site.Menus.nav }}
+        <li>
+          {{ $active := cond (eq .URL "/") (eq $current.RelPermalink "/") (in
+          $current.RelPermalink .URL) }}
+
+          <a href="{{ .URL }}" class="nav-link {{ if $active }}active{{ end }}">
+            {{ .Name }}
+          </a>
+        </li>
+        {{ end }}
+      </ul>
+
+      <ul class="ml-auto flex gap-1">
+        {{ range .Site.Menus.social }}
+        <li>
+          <a href="{{ .URL }}" class="nav-link">{{ .Name }}</a>
+        </li>
+        {{ end }}
+      </ul>
+    </nav>
+
+    <main class="container">{{ block "main" . }} {{ end }}</main>
+
+    <footer>
+      <div class="container flex py-2">
+        <div>© 2023 Kamil Tomšík.</div>
+
+        <div class="ml-auto flex gap-1">
+          {{ range .Site.Menus.social }}
+          <a href="{{ .URL }}">{{ .Name }}</a>
+          {{ end }}
+        </div>
+      </div>
+    </footer>
+
+    <script
+      async
+      src="https://platform.twitter.com/widgets.js"
+      charset="utf-8"
+    ></script>
+  </body>
+</html>
