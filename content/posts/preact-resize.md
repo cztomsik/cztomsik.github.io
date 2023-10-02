@@ -97,7 +97,7 @@ export const useResize = ({
     );
 
     return { style, resizeHandle, onMouseDown };
-  }, [width, minWidth]);
+  }, [width, minWidth, maxWidth]);
 ```
 
 And usage could look like this:
