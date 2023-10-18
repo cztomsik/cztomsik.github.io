@@ -9,7 +9,7 @@ In my [recent tweet](https://twitter.com/cztomsik/status/1707462107510280459),
 I quickly shared a video demonstrating how I implemented sidebar resizing with
 Preact in a way that is both straightforward and efficient.
 
-<div style="min-height: 684px">
+<div>
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">I love <a href="https://twitter.com/preactjs?ref_src=twsrc%5Etfw">@preactjs</a> with signals, many things are so much easier, and very efficient. For example it&#39;s possible to do resize in plain preact without any hacks and it still does not re-render during mousemove.<a href="https://twitter.com/hashtag/buildinpublic?src=hash&amp;ref_src=twsrc%5Etfw">#buildinpublic</a> <a href="https://twitter.com/hashtag/reactjs?src=hash&amp;ref_src=twsrc%5Etfw">#reactjs</a> <a href="https://t.co/uIKvsW2Kki">pic.twitter.com/uIKvsW2Kki</a></p>&mdash; Kamil Tomšík (@cztomsik) <a href="https://twitter.com/cztomsik/status/1707462107510280459?ref_src=twsrc%5Etfw">September 28, 2023</a></blockquote>
 </div>
 

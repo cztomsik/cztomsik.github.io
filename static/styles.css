@@ -38,6 +38,22 @@ p {
   margin-bottom: 1rem;
 }
 
+strong {
+  font-weight: 600;
+}
+
+ol {
+  padding: 0.5rem 3rem;
+}
+
+li {
+  display: list-item;
+}
+
+ol > li {
+  list-style: decimal;
+}
+
 h1,
 h2,
 h3 {
