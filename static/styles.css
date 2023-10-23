@@ -73,6 +73,13 @@ h3 {
   font-size: 1rem;
 }
 
+blockquote {
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  background-color: rgb(247 247 247);
+  border-left: 0.25rem solid rgb(37 99 235);
+}
+
 pre {
   overflow-x: auto;
   padding: 1rem;
