@@ -9,11 +9,11 @@
   </head>
   <body class="flex flex-col min-h-full bg-gray-50">
     <nav class="bg-gray-100 text-gray-700 border-b">
-      <div class="container mx-auto flex items-center py-3">
-        <a href="/" class="font-medium mr-10">Kamil Tomšík</a>
+      <div class="container mx-auto flex flex-wrap items-center py-3">
+        <a href="/" class="font-medium mr-10 max-sm:w-full">Kamil Tomšík</a>
 
         {{ $current := . }}
-        <ul class="flex gap-4">
+        <ul class="flex">
           {{ range .Site.Menus.nav }} {{ $active := cond (eq .URL "/") (eq
           $current.RelPermalink "/") (in $current.RelPermalink .URL) }}
           <li class="px-2 py-1 rounded {{ if $active }}bg-gray-200{{ end }}">
