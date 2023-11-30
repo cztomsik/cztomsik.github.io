@@ -5,8 +5,8 @@ title: Ava for Windows
 
 # Ava for Windows (experimental)
 
-**TL;DR** There is now an experimental build of [Ava](https://www.avapls.com)
-for Windows. You can [download it here](https://www.avapls.com/#download).
+> **TL;DR** There is now an experimental build of [Ava](https://www.avapls.com)
+> for Windows. You can [download it here](https://www.avapls.com/#download).
 
 As you may know already, Ava is a webview-based app. This is because I knew from
 the start that I want to support multiple platforms and I don't want to write
