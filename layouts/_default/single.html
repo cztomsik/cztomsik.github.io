@@ -1,7 +1,7 @@
 {{ define "title" }} {{ .Title }} &ndash; {{ .Site.Title }} {{ end }} {{ define
 "main" }}
-<div>
-  <h1>{{ .Title }}</h1>
+<div class="prose">
+  <h1 class="mt-10 mb-0">{{ .Title }}</h1>
   {{ if .Date }}
   <p class="m-0">{{ .Date.Format "2 Jan 2006" }}</p>
   {{ end }}
