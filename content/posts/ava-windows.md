@@ -1,9 +1,7 @@
 ---
 date: 2023-10-18
-title: Ava for Windows
+title: Ava for Windows (experimental)
 ---
-
-# Ava for Windows (experimental)
 
 > **TL;DR** There is now an experimental build of [Ava](https://www.avapls.com)
 > for Windows. You can [download it here](https://www.avapls.com/#download).
