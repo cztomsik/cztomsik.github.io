@@ -106,13 +106,13 @@ the end of the request, it will destroy all those things.
 Something along these lines:
 
 ```zig
-const withDb = fn(ctx: *tk.Context) !void {
+fn withDb(ctx: *tk.Context) !void {
     const pool = ctx.injector.get(*db.Pool);
 
     var session = try pool.get(ctx.allocator);
     defer session.deinit();
 
-    return next();
+    return ctx.next();
 };
 ```
 
