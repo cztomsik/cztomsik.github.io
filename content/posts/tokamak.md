@@ -1,6 +1,6 @@
 ---
 date: 2023-03-15
-title: Tokamak: A web framework for Zig
+title: "Tokamak: A web framework for Zig"
 ---
 
 I've been recently extracting some parts of Ava into a separate open-source
