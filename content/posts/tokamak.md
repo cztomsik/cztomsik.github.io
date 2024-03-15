@@ -19,8 +19,8 @@ short-lived, for the time of the request, so it's not a big deal, you can just
 slap an `arena.allocator()` everywhere and you're good to go.
 
 This is actually awesome because you get some kind of predictability, you can
-identify memory leaks quickly, and in general, you can be more confident about
-your application in general. If you've ever had to find a memory leak in an
+identify memory leaks quickly, and you can be more confident about your
+application in general. If you've ever had to find a memory leak in an
 express.js application, you know what I'm talking about.
 
 Not that it cannot happen but it's way easier to reason about your application
