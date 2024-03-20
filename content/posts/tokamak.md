@@ -137,6 +137,13 @@ Here's a [link to the source code](https://github.com/cztomsik/tokamak/blob/c838
 Obviously, this can be used for many things, like logging, error handling,
 user authentication, etc.
 
+## Getting started
+
+There's also an [example
+project](https://github.com/cztomsik/tokamak/tree/main/example) in the repo
+which should work out of the box, so you can just make few changes and start
+hacking.
+
 ## Future
 
 It's still very early, and there are going to be a lot of changes, but I think
