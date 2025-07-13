@@ -3,10 +3,13 @@ date: 2025-07-11
 title: Container v2 (experimental)
 ---
 
-I am currently in the process of rewriting the DI container in tokamak so I
-thought I could take this as an opportunity to recap why are we even doing this,
-and what are the benefits of using DI in the context of a web application
-written in Zig.
+> NOTE: This is a draft; I didn't have enough time to finish this post. Either
+> there will be a part two, or I'll just update this post. Check again later.
+
+I am currently in the process of rewriting the DI container in Tokamak, so I
+thought I could take this opportunity to recap why we are even doing this and
+what are the benefits of using DI in the context of a web application written in
+Zig.
 
 ## The Injector
 

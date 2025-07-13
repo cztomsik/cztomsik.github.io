@@ -3,13 +3,14 @@ date: 2017-07-27
 title: Raspberry virtual machine from sdcard (linux/mac)
 ---
 
-> This was originally published on medium.com but they recently started paywalling everybody so I'm moving my articles here.
+> This was originally published on medium.com, but they recently started
+> paywalling everybody, so I'm moving my articles here.
 
-Here's a quick way to run raspbian from sdcard on your mac or linux machine.
-It will emulate Raspberry Pi 2 (different version) but it doesn't matter because
-all the raspberries are binary compatible.
+Here's a quick way to run Raspbian from an SD card on your Mac or Linux machine.
+It will emulate a Raspberry Pi 2 (or different version), but it doesn't matter
+because all Raspberry Pi models are binary compatible.
 
-Download [latest raspbian](https://www.raspberrypi.com/software/)
+Download the [latest Raspbian](https://www.raspberrypi.com/software/)
 
 ![raspbian](/images/raspi-vm-sd-card.png)
 

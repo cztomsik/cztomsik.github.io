@@ -6,19 +6,19 @@ title: Ava for Windows (experimental)
 > **TL;DR** There is now an experimental build of [Ava](https://www.avapls.com)
 > for Windows. You can [download it here](https://www.avapls.com/#download).
 
-As you may know already, Ava is a webview-based app. This is because I knew from
-the start that I want to support multiple platforms and I don't want to write
-the same app multiple times.
+As you may already know, Ava is a webview-based app. I knew from the start that
+I wanted to support multiple platforms and didn't want to write the same app
+multiple times.
 
-I could use electron, but I don't like to download big binaries. I could also
-use tauri, but I have bad experience with Rust so that was also off the table.
-And to be honest, I don't like dependencies in general, so I just tried to make
-a simple PoC and see how far I can get.
+I could use Electron, but I didn't want to download large binaries. I could also
+use Tauri, but I have bad experience with Rust, so that option was off the
+table. And to be honest, I don't like dependencies in general, so I just tried
+to make a simple PoC and see how far I could get.
 
 ## macOS
 
-The macos version was much easier than I expected. I just used the `WKWebView`
-and given that Zig can include Objective C files, it was just a matter of few
+The macOS version was much easier than I expected. I just used `WKWebView`, and
+given that Zig can include Objective-C files, it was just a matter of a few
 lines to get it working.
 
 This was already a big win for me, and it lasted for a few nice weeks, where I

@@ -8,15 +8,15 @@ After 4 months of work, I am happy to announce that my project,
 
 <video autoplay="true" loop="true" src="https://github.com/cztomsik/ava/assets/3526922/790dd1a2-5e59-4a63-a05a-f255b5677269"></video>
 
-Ava is an all-in-one **desktop application** for running LLMs **locally**. It is using
-llama.cpp under the hood, so it is compatible with most of the GGUF models which
-you can find on [huggingface.co](https://huggingface.co).
+Ava is an all-in-one **desktop application** for running LLMs **locally**. It
+uses llama.cpp under the hood, so it is compatible with most GGUF models on
+[huggingface.co](https://huggingface.co).
 
 You can download it from [avapls.com](https://avapls.com). It is available for
-Mac and Windows. Linux version will eventually happen too but I can't promise
-when exactly.
+Mac and Windows. A Linux version will eventually be released too, but I can't
+promise when exactly.
 
-It also includes builtin downloader for several models, so you don't need to
+It also includes a built-in downloader for several models, so you don't need to
 spend time searching for the right model and downloading it manually.
 
 ## Why not open source from the beginning?

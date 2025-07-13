@@ -14,8 +14,8 @@ Preact in a way that is both straightforward and efficient.
 </div>
 
 The tweet was then retweeted by [Jason Miller](https://twitter.com/_developit),
-an original author of Preact, and it gained significant traction, and few people
-also asked for the source-code.
+an original author of Preact, and it gained significant traction, and a few
+people also asked for the source code.
 
 The codebase in the video is not open-source; it's a [personal project I'm
 currently working on](https://www.avapls.com). However, I decided to share a
@@ -48,7 +48,7 @@ We cannot use a computed width in the style prop because that would cause a full
 re-render on every change of the `width.value`. Instead, we can create another
 computed signal to pass directly to the `style` prop in Preact.
 
-Here's the full-code:
+Here's the full code:
 
 ```js
 import { computed } from "@preact/signals";

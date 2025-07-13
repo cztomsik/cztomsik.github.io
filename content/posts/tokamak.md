@@ -3,17 +3,17 @@ date: 2024-03-15
 title: "Tokamak: A web framework for Zig"
 ---
 
-I've been recently extracting some parts of Ava into a separate open-source
-projects, and one of them is Tokamak, a web framework for Zig.
+I've recently been extracting some parts of Ava into a separate open-source
+project, and one of them is Tokamak, a web framework for Zig.
 
-So first of all, why Zig? Zig is a very interesting language, it's a low-level
-language but with a very powerful metaprogramming support. Hm... ok, I'm too far
-ahead, so maybe let's start from the beginning...
+So first of all, why Zig? Zig is a very interesting, low-level language with
+powerful metaprogramming support. Hm... OK, I'm getting ahead of myself. Let's
+start from the beginning...
 
 ## Allocators
 
-At first, I thought Zig is not a good fit for server-side programming, because
-you need to manage memory manually, and the code usually looks a bit more noisy
+At first, I thought Zig was not a good fit for server-side programming because
+you need to manage memory manually and the code usually looks a bit noisier for
 for common tasks. But eventually, I've realized that all those allocations are
 short-lived, for the time of the request, so it's not a big deal, you can just
 slap an `arena.allocator()` everywhere and you're good to go.
