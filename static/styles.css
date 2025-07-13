@@ -31,6 +31,11 @@ main blockquote {
   border-left: 0.25rem solid rgb(37 99 235);
 }
 
+main blockquote p:first-of-type::before,
+main blockquote p:last-of-type::after {
+  content: none;
+}
+
 pre {
   overflow-x: auto;
   padding: 1rem;
