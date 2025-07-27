@@ -15,7 +15,7 @@ start from the beginning...
 At first, I thought Zig was not a good fit for server-side programming because
 you need to manage memory manually and the code usually looks a bit noisier for
 for common tasks. But eventually, I've realized that all those allocations are
-short-lived, for the time of the request, so it's not a big deal, you can just
+short-lived, for the time of the request, so it's not a big deal; you can just
 slap an `arena.allocator()` everywhere and you're good to go.
 
 This is actually awesome because you get some kind of predictability, you can
@@ -23,18 +23,18 @@ identify memory leaks quickly, and you can be more confident about your
 application in general. If you've ever had to find a memory leak in an
 express.js application, you know what I'm talking about.
 
-Not that it cannot happen but it's way easier to reason about your application
-if you know which thing can allocate memory and which cannot. So I guess, it's a
+Not that it cannot happen, but it's way easier to reason about your application
+if you know which thing can allocate memory and which cannot. So I guess it's a
 win after all. And there's something magical about looking at the memory usage
 charts and seeing that it's pretty much constant, no matter how many requests
 you're serving.
 
-Still, the noise was a problem for me, but I had a scratch at the back of my
-head, I had a feeling that there has to be some easy way around it.
+Still, the noise was a problem for me, but I had an itch at the back of my
+head; I had a feeling that there has to be some easy way around it.
 
 ## Dependency Injection
 
-Zig is not my first language, I've been doing pretty much everything and I've
+Zig is not my first language; I've been doing pretty much everything and I've
 spent a lot of time with Java, way more than I'd like to admit. But there are
 some good things about Java, and one of them is dependency injection.
 
@@ -141,7 +141,7 @@ user authentication, etc.
 
 There's also an [example
 project](https://github.com/cztomsik/tokamak/tree/main/example) in the repo
-which should work out of the box, so you can just make few changes and start
+which should work out of the box, so you can just make a few changes and start
 hacking.
 
 ## Future

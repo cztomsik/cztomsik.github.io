@@ -34,15 +34,17 @@ Before we dive into the implementation, let's briefly recap what [Preact Signals
 Signals are like small observables with a getter and setter for their
 `.value` property.
 
-You create a signal with `signal(123)` and whenever you read the `.value`, the component will subscribe to the signal and it will get re-rendered automatically.
+You create a signal with `signal(123)`, and whenever you read the `.value`, the
+component will subscribe to the signal and it will get re-rendered
+automatically.
 
-If you use the signal directly in the template or a prop, it has a special
-treatment in Preact, it just updates the DOM and skips the render call entirely.
+If you use the signal directly in the template or a prop, it has special
+treatment in Preact; it just updates the DOM and skips the render call entirely.
 
 ## Efficient Sidebar Resizing Implementation
 
-So ideally, we want to render the Preact component once, set up listeners, and the logic,
-and then opt-out from the automatic re-rendering.
+So ideally, we want to render the Preact component once, set up listeners and
+the logic, and then opt out of the automatic re-rendering.
 
 We cannot use a computed width in the style prop because that would cause a full
 re-render on every change of the `width.value`. Instead, we can create another
