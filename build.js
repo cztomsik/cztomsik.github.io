@@ -34,15 +34,31 @@ function parseFrontmatter(content) {
   return { meta, body };
 }
 
+function extractDescription(body) {
+  // Get first paragraph as description, strip markdown
+  const firstPara = body.split('\n\n')[0] || '';
+  return firstPara
+    .replace(/[#*_`\[\]]/g, '')  // Remove markdown syntax
+    .replace(/\(.*?\)/g, '')      // Remove link URLs
+    .replace(/\s+/g, ' ')         // Normalize whitespace
+    .trim()
+    .slice(0, 160);               // Limit to 160 chars
+}
+
 function buildPost(filepath, template) {
   const content = readFileSync(filepath, 'utf-8');
   const { meta, body } = parseFrontmatter(content);
   const html = marked(body);
 
   const slug = basename(filepath, '.md');
+  const url = `/posts/${slug}.html`;
+  const description = meta.description || extractDescription(body);
+
   const page = template
     .replace(/\{\{title\}\}/g, meta.title || slug)
     .replace(/\{\{date\}\}/g, meta.date || '')
+    .replace(/\{\{description\}\}/g, description)
+    .replace(/\{\{url\}\}/g, url)
     .replace(/\{\{content\}\}/g, html);
 
   return { slug, meta, html: page };
@@ -60,6 +76,8 @@ function buildIndex(posts, template) {
   return template
     .replace(/\{\{title\}\}/g, 'Blog')
     .replace(/\{\{date\}\}/g, '')
+    .replace(/\{\{description\}\}/g, 'Personal blog of Kamil Tomšík - software engineering, web development, and more.')
+    .replace(/\{\{url\}\}/g, '/')
     .replace(/\{\{content\}\}/g, content);
 }
 
@@ -94,3 +112,22 @@ if (existsSync(POSTS_DIR)) {
 const indexHtml = buildIndex(posts, template);
 writeFileSync(join(DIST_DIR, 'index.html'), indexHtml);
 console.log(`Built: index (${posts.length} posts)`);
+
+// Build sitemap
+const SITE_URL = 'https://tomsik.cz';
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>${SITE_URL}/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+${posts.map(p => `  <url>
+    <loc>${SITE_URL}/posts/${p.slug}.html</loc>
+    ${p.meta.date ? `<lastmod>${p.meta.date}</lastmod>` : ''}
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>`).join('\n')}
+</urlset>`;
+writeFileSync(join(DIST_DIR, 'sitemap.xml'), sitemap);
+console.log('Built: sitemap.xml');
