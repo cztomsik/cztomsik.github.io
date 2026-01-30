@@ -61,7 +61,7 @@ function buildPost(filepath, template) {
     .replace(/\{\{url\}\}/g, url)
     .replace(/\{\{content\}\}/g, html);
 
-  return { slug, meta, html: page };
+  return { slug, meta, description, html: page };
 }
 
 function buildIndex(posts, template) {
@@ -132,3 +132,23 @@ ${posts.map(p => `  <url>
 </urlset>`;
 writeFileSync(join(DIST_DIR, 'sitemap.xml'), sitemap);
 console.log('Built: sitemap.xml');
+
+// Build RSS feed
+const sortedPosts = [...posts].sort((a, b) => (b.meta.date || '').localeCompare(a.meta.date || ''));
+const rss = `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Kamil Tomšík</title>
+    <link>${SITE_URL}</link>
+    <description>Personal blog of Kamil Tomšík</description>
+${sortedPosts.map(p => `    <item>
+      <title>${p.meta.title || p.slug}</title>
+      <link>${SITE_URL}/posts/${p.slug}/</link>
+      <guid>${SITE_URL}/posts/${p.slug}/</guid>
+      <pubDate>${p.meta.date ? new Date(p.meta.date).toUTCString() : ''}</pubDate>
+      <description>${p.description}</description>
+    </item>`).join('\n')}
+  </channel>
+</rss>`;
+writeFileSync(join(DIST_DIR, 'feed.xml'), rss);
+console.log('Built: feed.xml');
