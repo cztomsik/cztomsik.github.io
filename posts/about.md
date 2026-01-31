@@ -4,7 +4,7 @@ title: About
 
 ## Kamil Tomšík
 
-Software engineer specializing in systems programming and web technologies. Based in Brno, Czech Republic. Co-founder at [Box Optima](https://boxoptima.cz).
+Software engineer specializing in systems programming and web technologies. Based in Brno, Czech Republic. Co-founder at [BoxOptima](https://boxoptima.cz).
 
 ## Projects
 
