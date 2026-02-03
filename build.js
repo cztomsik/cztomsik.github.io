@@ -51,7 +51,7 @@ function buildPost(filepath, template) {
   const html = marked(body);
 
   const slug = basename(filepath, '.md');
-  const url = `/posts/${slug}/`;
+  const url = `/posts/${slug}.html`;
   const description = meta.description || extractDescription(body);
 
   const page = template
@@ -68,7 +68,7 @@ function buildIndex(posts, template) {
   const sorted = [...posts].sort((a, b) => (b.meta.date || '').localeCompare(a.meta.date || ''));
 
   const list = sorted
-    .map(p => `<li><a href="posts/${p.slug}/">${p.meta.title || p.slug}</a> <time>${p.meta.date || ''}</time></li>`)
+    .map(p => `<li><a href="posts/${p.slug}.html">${p.meta.title || p.slug}</a> <time>${p.meta.date || ''}</time></li>`)
     .join('\n');
 
   const content = `<ul class="post-list">\n${list}\n</ul>`;
@@ -102,8 +102,7 @@ if (existsSync(POSTS_DIR)) {
   for (const file of readdirSync(POSTS_DIR)) {
     if (!file.endsWith('.md')) continue;
     const post = buildPost(join(POSTS_DIR, file), template);
-    mkdirSync(join(DIST_DIR, 'posts', post.slug), { recursive: true });
-    writeFileSync(join(DIST_DIR, 'posts', post.slug, 'index.html'), post.html);
+    writeFileSync(join(DIST_DIR, 'posts', `${post.slug}.html`), post.html);
     posts.push(post);
     console.log(`Built: ${post.slug}`);
   }
@@ -124,7 +123,7 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>1.0</priority>
   </url>
 ${posts.map(p => `  <url>
-    <loc>${SITE_URL}/posts/${p.slug}/</loc>
+    <loc>${SITE_URL}/posts/${p.slug}.html</loc>
     ${p.meta.date ? `<lastmod>${p.meta.date}</lastmod>` : ''}
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -143,8 +142,8 @@ const rss = `<?xml version="1.0" encoding="UTF-8"?>
     <description>Personal blog of Kamil Tomšík</description>
 ${sortedPosts.map(p => `    <item>
       <title>${p.meta.title || p.slug}</title>
-      <link>${SITE_URL}/posts/${p.slug}/</link>
-      <guid>${SITE_URL}/posts/${p.slug}/</guid>
+      <link>${SITE_URL}/posts/${p.slug}.html</link>
+      <guid>${SITE_URL}/posts/${p.slug}.html</guid>
       <pubDate>${p.meta.date ? new Date(p.meta.date).toUTCString() : ''}</pubDate>
       <description>${p.description}</description>
     </item>`).join('\n')}
